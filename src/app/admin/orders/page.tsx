@@ -8,7 +8,7 @@ const STATUSES = ["PENDING", "CONFIRMED", "PACKED", "SHIPPED", "DELIVERED", "CAN
 export default async function AdminOrders({ searchParams }: { searchParams: Promise<{ status?: string; q?: string }> }) {
   const { status, q } = await searchParams;
   const orders = await db.order.findMany({
-    where: { ...(status ? { status } : {}), ...(q ? { OR: [{ number: { contains: q.toUpperCase() } }, { email: { contains: q } }] } : {}) },
+    where: { ...(status ? { status } : {}), ...(q ? { OR: [{ number: { contains: q.toUpperCase(), mode: "insensitive" } }, { email: { contains: q, mode: "insensitive" } }] } : {}) },
     include: { payments: true, returns: true, _count: { select: { items: true } } }, orderBy: { createdAt: "desc" }, take: 200,
   });
   return (

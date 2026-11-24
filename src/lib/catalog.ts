@@ -62,9 +62,9 @@ function searchWhere(q: string): Prisma.ProductWhereInput {
   return {
     AND: terms.map((t) => ({
       OR: [
-        { name: { contains: t } }, { description: { contains: t } }, { material: { contains: t } },
-        { occasion: { contains: t } }, { style: { contains: t } }, { pattern: { contains: t } },
-        { category: { name: { contains: t } } }, { variants: { some: { color: { contains: t } } } },
+        { name: { contains: t, mode: "insensitive" } }, { description: { contains: t, mode: "insensitive" } }, { material: { contains: t, mode: "insensitive" } },
+        { occasion: { contains: t, mode: "insensitive" } }, { style: { contains: t, mode: "insensitive" } }, { pattern: { contains: t, mode: "insensitive" } },
+        { category: { name: { contains: t, mode: "insensitive" } } }, { variants: { some: { color: { contains: t, mode: "insensitive" } } } },
       ],
     })),
   };
@@ -201,7 +201,7 @@ export async function searchSuggestions(q: string) {
   if (q.trim().length < 2) return { products: [], categories: [] };
   const [products, categories] = await Promise.all([
     db.product.findMany({ where: buildWhere({}, { q }), include: cardInclude, take: 6, orderBy: { popularity: "desc" } }),
-    db.productCategory.findMany({ where: { name: { contains: q.trim() } }, take: 4 }),
+    db.productCategory.findMany({ where: { name: { contains: q.trim(), mode: "insensitive" } }, take: 4 }),
   ]);
   return {
     products: products.map((p) => ({ slug: p.slug, name: p.name, price: p.price, image: p.images[0]?.url ?? "", category: p.category.name })),

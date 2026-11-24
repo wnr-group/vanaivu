@@ -49,7 +49,7 @@ export async function studioCatalog(opts: { slot?: string; q?: string; slugs?: s
       published: true, tryOnEnabled: true,
       ...(opts.slugs ? { slug: { in: opts.slugs } } : {}),
       ...(opts.slot ? { garment: { slot: opts.slot } } : {}),
-      ...(opts.q ? { OR: [{ name: { contains: opts.q } }, { category: { name: { contains: opts.q } } }] } : {}),
+      ...(opts.q ? { OR: [{ name: { contains: opts.q, mode: "insensitive" } }, { category: { name: { contains: opts.q, mode: "insensitive" } } }] } : {}),
     },
     include: studioInclude,
     orderBy: [{ isTrending: "desc" }, { popularity: "desc" }],

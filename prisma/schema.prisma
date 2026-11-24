@@ -1,6 +1,6 @@
 // VESTRA data model.
-// Local development uses SQLite so the project runs with zero setup.
-// To move to PostgreSQL: change provider to "postgresql", set DATABASE_URL, run `npx prisma migrate dev`.
+// PostgreSQL (Supabase). DATABASE_URL = pooled connection (port 6543, used by the app on Vercel),
+// DIRECT_URL = direct connection (port 5432, used by migrations).
 // Enum-like fields are stored as strings (documented beside each field) so the schema stays portable.
 
 generator client {
@@ -8,8 +8,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 // ───────────────────────────── Identity ─────────────────────────────

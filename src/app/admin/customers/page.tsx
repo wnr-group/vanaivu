@@ -7,7 +7,7 @@ export const metadata = { title: "Customers" };
 export default async function AdminCustomers({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const { q } = await searchParams;
   const users = await db.user.findMany({
-    where: { role: "CUSTOMER", ...(q ? { OR: [{ email: { contains: q } }, { name: { contains: q } }] } : {}) },
+    where: { role: "CUSTOMER", ...(q ? { OR: [{ email: { contains: q, mode: "insensitive" } }, { name: { contains: q, mode: "insensitive" } }] } : {}) },
     include: { orders: { where: { status: { notIn: ["CANCELLED", "PENDING"] } }, select: { total: true } }, _count: { select: { orders: true } } },
     orderBy: { createdAt: "desc" }, take: 200,
   });

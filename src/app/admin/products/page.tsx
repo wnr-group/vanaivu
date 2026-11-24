@@ -9,7 +9,7 @@ export default async function AdminProducts({ searchParams }: { searchParams: Pr
   const { q, stock, category } = await searchParams;
   const [products, cats] = await Promise.all([
     db.product.findMany({
-      where: { ...(q ? { OR: [{ name: { contains: q } }, { variants: { some: { sku: { contains: q } } } }] } : {}), ...(category ? { category: { slug: category } } : {}), ...(stock === "low" ? { variants: { some: { inventory: { quantity: { lte: 3 } } } } } : {}) },
+      where: { ...(q ? { OR: [{ name: { contains: q, mode: "insensitive" } }, { variants: { some: { sku: { contains: q, mode: "insensitive" } } } }] } : {}), ...(category ? { category: { slug: category } } : {}), ...(stock === "low" ? { variants: { some: { inventory: { quantity: { lte: 3 } } } } } : {}) },
       include: { images: { take: 1, orderBy: { sortOrder: "asc" } }, variants: { include: { inventory: true } }, category: true },
       orderBy: { updatedAt: "desc" },
     }),

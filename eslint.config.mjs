@@ -5,6 +5,10 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    // Three.js buffers are mutated in useFrame by design (R3F), and a few effects sync external state into inputs.
+    rules: { "react-hooks/immutability": "warn", "react-hooks/set-state-in-effect": "warn" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

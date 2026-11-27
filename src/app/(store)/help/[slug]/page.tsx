@@ -3,14 +3,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 const PAGES: Record<string, { title: string; sections: [string, string][] }> = {
-  about: { title: "About VESTRA", sections: [
-    ["Our story", "VESTRA designs contemporary womenswear in India for women who dress with intention. Every collection is developed in our studio and produced in small runs with partners we know by name."],
+  about: { title: "About VANAIVU", sections: [
+    ["Our story", "VANAIVU designs contemporary womenswear in India for women who dress with intention. Every collection is developed in our studio and produced in small runs with partners we know by name."],
     ["Fashion technology", "Our Virtual Studio lets you build an avatar from your own measurements and try pieces on in 3D before you buy. AI photo try-on and our personal stylist help you shop with confidence and return less."],
   ] },
   contact: { title: "Contact & customer support", sections: [
-    ["Customer care", "Write to care@vestra.example or call 1800-000-0000 (Mon–Sat, 10am–7pm IST). We reply to every message within one working day."],
+    ["Customer care", "Write to care@vanaivu.example or call 1800-000-0000 (Mon–Sat, 10am–7pm IST). We reply to every message within one working day."],
     ["Order help", "For a specific order, open it under Account → Orders & returns to track it, cancel before dispatch, request a return or download your invoice."],
-    ["Studio", "VESTRA Studio, Indiranagar, Bengaluru 560038. Styling appointments by request."],
+    ["Studio", "VANAIVU Studio, Indiranagar, Bengaluru 560038. Styling appointments by request."],
   ] },
   "shipping-returns": { title: "Shipping & returns", sections: [
     ["Shipping", "Complimentary standard shipping on orders above ₹2,499 (₹149 otherwise), delivered in 3–5 working days. Express delivery in 1–2 working days for ₹249. We ship across India."],

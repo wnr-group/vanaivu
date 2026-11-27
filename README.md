@@ -1,4 +1,4 @@
-# VESTRA
+# VANAIVU
 
 Premium women's fashion e-commerce with a 3D Virtual Studio, AI photo try-on and an AI stylist.
 A single full-stack Next.js 16 app (App Router, server actions, route handlers) with Prisma.

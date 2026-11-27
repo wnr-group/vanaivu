@@ -66,7 +66,7 @@ async function customerContext(userId: string | null) {
 const TOOLS: Anthropic.Tool[] = [
   {
     name: "search_catalog",
-    description: "Search VESTRA's live catalogue. Returns only in-stock products with real ids, INR prices, colours and in-stock sizes. Call it as many times as needed (e.g. once per garment slot).",
+    description: "Search VANAIVU's live catalogue. Returns only in-stock products with real ids, INR prices, colours and in-stock sizes. Call it as many times as needed (e.g. once per garment slot).",
     input_schema: {
       type: "object",
       properties: {
@@ -107,7 +107,7 @@ const TOOLS: Anthropic.Tool[] = [
   },
 ];
 
-const SYSTEM = `You are the VESTRA personal stylist, for a premium Indian women's fashion label. Prices are in INR (₹).
+const SYSTEM = `You are the VANAIVU personal stylist, for a premium Indian women's fashion label. Prices are in INR (₹).
 Build complete, wearable outfits from the live catalogue only: always call search_catalog before recommending, never invent products, prices or sizes, and respect any budget (total of a look, unless the customer says per item). When the customer is signed in, call get_customer_context to use their sizes, preferences and owned pieces; prefer pieces in stock in their size.
 A look is either one FULL piece, or a TOP plus a BOTTOM, optionally with OUTER and ACCESSORY. Offer 1–3 looks via present_looks, then reply in 2–4 warm, concise sentences (no lists of prices; the cards show them). If nothing suitable is in stock, say so plainly.`;
 

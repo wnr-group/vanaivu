@@ -164,7 +164,7 @@ export async function updateOrderAction(fd: FormData) {
   if (status && status !== order.status) {
     await db.order.update({ where: { id }, data: { status } });
     if (SHIPMENT_FOR_ORDER[status]) await addShipmentEvent(id, SHIPMENT_FOR_ORDER[status], `Order ${status.toLowerCase()}`);
-    if (status === "CANCELLED") await addShipmentEvent(id, "CANCELLED", "Cancelled by VESTRA");
+    if (status === "CANCELLED") await addShipmentEvent(id, "CANCELLED", "Cancelled by VANAIVU");
     if (status === "DELIVERED") {
       const cod = order.payments.find((p) => p.provider === "cod");
       if (cod) await db.payment.update({ where: { id: cod.id }, data: { status: "CAPTURED" } });
@@ -218,7 +218,7 @@ export async function saveCampaignAction(fd: FormData) {
 export async function saveStoryAction(fd: FormData) {
   await requireAdmin();
   const id = str(fd, "id");
-  const data = { title: str(fd, "title"), excerpt: str(fd, "excerpt"), body: str(fd, "body"), image: str(fd, "image"), author: str(fd, "author") || "The VESTRA Studio", readMins: Math.max(1, Math.round(num(fd, "readMins"))), published: fd.get("published") === "on" };
+  const data = { title: str(fd, "title"), excerpt: str(fd, "excerpt"), body: str(fd, "body"), image: str(fd, "image"), author: str(fd, "author") || "The VANAIVU Studio", readMins: Math.max(1, Math.round(num(fd, "readMins"))), published: fd.get("published") === "on" };
   if (fd.get("op") === "delete" && id) await db.editorialStory.delete({ where: { id } });
   else if (id) await db.editorialStory.update({ where: { id }, data });
   else if (data.title) await db.editorialStory.create({ data: { ...data, slug: slugify(data.title) } });

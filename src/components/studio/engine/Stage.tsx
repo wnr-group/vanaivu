@@ -18,8 +18,8 @@ import type { Measurements } from "./human";
  */
 export type AvatarProviderId = "realistic" | "procedural" | "gltf";
 export const PROVIDERS: Record<AvatarProviderId, { label: string; skeleton: string; supportsMeasurements: boolean }> = {
-  realistic: { label: "VESTRA realistic body", skeleton: "vestra-f1", supportsMeasurements: true },
-  procedural: { label: "VESTRA parametric body", skeleton: "vestra-f1", supportsMeasurements: true },
+  realistic: { label: "VANAIVU realistic body", skeleton: "vestra-f1", supportsMeasurements: true },
+  procedural: { label: "VANAIVU parametric body", skeleton: "vestra-f1", supportsMeasurements: true },
   gltf: { label: "Rigged GLB body", skeleton: "vestra-f1-rig", supportsMeasurements: false },
 };
 

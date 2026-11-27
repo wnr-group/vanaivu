@@ -184,7 +184,7 @@ async function main() {
   }
 
   const brands = await Promise.all(
-    ["VESTRA", "VESTRA Atelier", "VESTRA Studio", "VESTRA Heritage"].map((name) =>
+    ["VANAIVU", "VANAIVU Atelier", "VANAIVU Studio", "VANAIVU Heritage"].map((name) =>
       prisma.brand.create({ data: { name, slug: slugify(name) } })
     )
   );
@@ -287,7 +287,7 @@ async function main() {
     await prisma.collection.create({
       data: {
         slug: slugify(c.name), name: c.name, tagline: c.tagline, image: img(c.image), featured: !!c.featured, sortOrder: i,
-        description: `${c.tagline} A considered edit from the VESTRA studio.`,
+        description: `${c.tagline} A considered edit from the VANAIVU studio.`,
         products: { create: c.products.filter((s) => productIds[s]).map((s, k) => ({ productId: productIds[s], sortOrder: k })) },
       },
     });
@@ -304,9 +304,9 @@ async function main() {
 
   await prisma.editorialStory.createMany({
     data: [
-      { slug: "how-to-style-oversized-shirts", title: "How to style oversized shirts", excerpt: "Tucked, knotted, belted or worn as a jacket: four ways with one shirt.", image: img(52), author: "The VESTRA Studio", readMins: 4, body: "The oversized shirt is the most hardworking piece in a modern wardrobe.\n\nHalf-tuck it into wide-leg denim for an easy weekend proportion. Belt it over a slip dress to define the waist. Knot it at the hip above a pleated midi. Or wear it open over a rib tank as the lightest of jackets.\n\nThe rule: let one element be relaxed and keep the other one considered." },
+      { slug: "how-to-style-oversized-shirts", title: "How to style oversized shirts", excerpt: "Tucked, knotted, belted or worn as a jacket: four ways with one shirt.", image: img(52), author: "The VANAIVU Studio", readMins: 4, body: "The oversized shirt is the most hardworking piece in a modern wardrobe.\n\nHalf-tuck it into wide-leg denim for an easy weekend proportion. Belt it over a slip dress to define the waist. Knot it at the hip above a pleated midi. Or wear it open over a rib tank as the lightest of jackets.\n\nThe rule: let one element be relaxed and keep the other one considered." },
       { slug: "the-art-of-minimal-dressing", title: "The art of minimal dressing", excerpt: "Fewer pieces, better choices, and why restraint reads as confidence.", image: img(47), author: "Isha Menon", readMins: 6, body: "Minimal dressing is not about owning less for its own sake. It is about knowing what works.\n\nStart with a tight palette: black, ivory, stone and one accent. Choose fabrics that hold their shape, such as crepe, wool and heavy cotton. Prioritise fit over trend: a tailor can turn good into exceptional.\n\nThen repeat. A uniform is not boring when every piece is chosen." },
-      { slug: "building-a-versatile-wardrobe", title: "Building a versatile wardrobe", excerpt: "The twelve pieces that create more than fifty outfits.", image: img(87), author: "The VESTRA Studio", readMins: 7, body: "A versatile wardrobe is built on pieces that speak to each other.\n\nThe foundation: a white shirt, a crew tee, straight jeans, a tailored trouser, a column midi, a trench, a knit, a blazer, a slip skirt, a crossbody, a clean sneaker and a pump.\n\nUse the VESTRA Virtual Studio to mix them on your avatar and see how far twelve pieces can go." },
+      { slug: "building-a-versatile-wardrobe", title: "Building a versatile wardrobe", excerpt: "The twelve pieces that create more than fifty outfits.", image: img(87), author: "The VANAIVU Studio", readMins: 7, body: "A versatile wardrobe is built on pieces that speak to each other.\n\nThe foundation: a white shirt, a crew tee, straight jeans, a tailored trouser, a column midi, a trench, a knit, a blazer, a slip skirt, a crossbody, a clean sneaker and a pump.\n\nUse the VANAIVU Virtual Studio to mix them on your avatar and see how far twelve pieces can go." },
       { slug: "five-ways-to-style-one-dress", title: "Five ways to style one dress", excerpt: "From boardroom to brunch with the Noir Column Midi.", image: img(79), author: "Aarohi Shah", readMins: 5, body: "One black midi, five moods.\n\n1. With a boyfriend blazer and loafers for the office.\n2. With a denim jacket and sneakers for the weekend.\n3. With statement earrings and a pump for dinner.\n4. Layered over a poplin shirt for a modern twist.\n5. With a longline coat for winter evenings." },
     ],
   });
@@ -314,7 +314,7 @@ async function main() {
   await prisma.coupon.createMany({
     data: [
       { code: "WELCOME10", description: "10% off your first order (up to ₹750)", kind: "PERCENT", value: 10, maxDiscount: 750 },
-      { code: "VESTRA500", description: "₹500 off orders above ₹4,999", kind: "FLAT", value: 500, minSubtotal: 4999 },
+      { code: "VANAIVU500", description: "₹500 off orders above ₹4,999", kind: "FLAT", value: 500, minSubtotal: 4999 },
       { code: "STUDIO15", description: "15% off outfits styled in the Virtual Studio, orders above ₹6,000", kind: "PERCENT", value: 15, minSubtotal: 6000, maxDiscount: 1500 },
     ],
   });
@@ -322,7 +322,7 @@ async function main() {
   const adminPass = process.env.SEED_ADMIN_PASSWORD ?? "vestra-admin-2026";
   const demoPass = process.env.SEED_DEMO_PASSWORD ?? "vestra-demo-2026";
   await prisma.user.create({
-    data: { email: "admin@vestra.test", name: "VESTRA Admin", role: "ADMIN", passwordHash: await bcrypt.hash(adminPass, 10), profile: { create: {} } },
+    data: { email: "admin@vestra.test", name: "VANAIVU Admin", role: "ADMIN", passwordHash: await bcrypt.hash(adminPass, 10), profile: { create: {} } },
   });
   await prisma.user.create({
     data: {

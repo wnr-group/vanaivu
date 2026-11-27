@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { StylistChat } from "@/components/stylist/StylistChat";
 
-export const metadata: Metadata = { title: "AI Stylist", description: "Ask VESTRA's AI stylist for outfits built from pieces in stock now." };
+export const metadata: Metadata = { title: "AI Stylist", description: "Ask VANAIVU's AI stylist for outfits built from pieces in stock now." };
 
 export default function StylistPage() {
   const aiEnabled = !!(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);

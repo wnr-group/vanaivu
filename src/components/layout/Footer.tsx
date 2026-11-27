@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Newsletter } from "./Newsletter";
+import { Logo } from "@/components/brand/Logo";
 
 const COLS = [
   { title: "Shop", links: [["New In", "/shop/new-in"], ["Dresses", "/shop/dresses"], ["Tops & Shirts", "/shop/tops"], ["Ethnic & Fusion", "/shop/ethnic-fusion"], ["Collections", "/collections"], ["Sale", "/shop/sale"]] },
   { title: "Experience", links: [["Virtual Studio", "/studio"], ["AI Photo Try-On", "/studio/photo"], ["AI Stylist", "/stylist"], ["My Wardrobe", "/account/wardrobe"], ["Journal", "/journal"]] },
   { title: "Help", links: [["Customer support", "/help/contact"], ["Shipping & returns", "/help/shipping-returns"], ["Size guide", "/help/size-guide"], ["Track an order", "/account/orders"], ["FAQs", "/help/faq"]] },
-  { title: "VESTRA", links: [["About VESTRA", "/help/about"], ["Contact", "/help/contact"], ["Privacy policy", "/help/privacy"], ["Terms", "/help/terms"]] },
+  { title: "VANAIVU", links: [["About VANAIVU", "/help/about"], ["Contact", "/help/contact"], ["Privacy policy", "/help/privacy"], ["Terms", "/help/terms"]] },
 ];
 
 export function Footer() {
@@ -30,13 +31,13 @@ export function Footer() {
       </div>
       <div className="border-t border-paper/10">
         <div className="container-x py-6 flex flex-col sm:flex-row gap-4 justify-between items-center text-[12px] text-paper/50">
-          <p className="font-serif tracking-[0.3em] text-paper text-lg">VESTRA</p>
+          <Logo className="text-paper text-lg" />
           <ul className="flex gap-6 uppercase tracking-[0.14em]">
             <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-paper">Instagram</a></li>
             <li><a href="https://pinterest.com" target="_blank" rel="noreferrer" className="hover:text-paper">Pinterest</a></li>
             <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-paper">YouTube</a></li>
           </ul>
-          <p>© {new Date().getFullYear()} VESTRA. Prices in INR, inclusive of GST.</p>
+          <p>© {new Date().getFullYear()} VANAIVU. Prices in INR, inclusive of GST.</p>
         </div>
       </div>
     </footer>

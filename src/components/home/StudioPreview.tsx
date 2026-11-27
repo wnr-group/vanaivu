@@ -12,7 +12,7 @@ export function StudioPreview() {
     <section className="mt-24 lg:mt-32 bg-ink text-paper overflow-hidden" aria-labelledby="studio-h">
       <div className="container-x grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 py-20 lg:py-28 items-center">
         <div>
-          <p className="eyebrow text-mauve">The VESTRA Virtual Studio</p>
+          <p className="eyebrow text-mauve">The VANAIVU Virtual Studio</p>
           <h2 id="studio-h" className="display text-[52px] sm:text-[72px] lg:text-[96px] mt-5">
             Your style.<br />Your silhouette.<br /><em className="italic text-peach">Your rules.</em>
           </h2>

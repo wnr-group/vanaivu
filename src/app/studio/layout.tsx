@@ -3,13 +3,14 @@ import { ShoppingBag } from "lucide-react";
 import { BagDrawer } from "@/components/layout/BagDrawer";
 import { Toaster } from "@/components/layout/Toaster";
 import { BagButton } from "@/components/studio/BagButton";
+import { Logo } from "@/components/brand/Logo";
 
 export default function StudioLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-paper">
       <header className="h-14 border-b border-line flex items-center justify-between px-4 lg:px-6 bg-paper relative z-30">
         <div className="flex items-center gap-5">
-          <Link href="/" className="font-serif text-xl tracking-[0.3em]">VESTRA</Link>
+          <Link href="/" aria-label="VANAIVU home"><Logo className="text-lg" /></Link>
           <span className="hidden sm:block h-5 w-px bg-line" />
           <nav className="hidden sm:flex gap-5 text-[11px] uppercase tracking-[0.16em]">
             <Link href="/studio" className="text-ink">3D Studio</Link>

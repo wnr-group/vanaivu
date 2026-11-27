@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap", style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  title: { default: "VESTRA | Contemporary Women's Fashion", template: "%s | VESTRA" },
+  title: { default: "VANAIVU | Contemporary Women's Fashion", template: "%s | VANAIVU" },
   description: "Contemporary women's fashion with a personal virtual fitting room. Discover, try on and style pieces that reflect you.",
 };
 export const viewport: Viewport = { themeColor: "#f3f1ee" };

@@ -1,4 +1,4 @@
-// VESTRA data model.
+// VANAIVU data model.
 // PostgreSQL (Supabase). DATABASE_URL = pooled connection (port 6543, used by the app on Vercel),
 // DIRECT_URL = direct connection (port 5432, used by migrations).
 // Enum-like fields are stored as strings (documented beside each field) so the schema stays portable.

@@ -54,7 +54,7 @@ export function CheckoutForm({ summaries, user, addresses, paymentMode }: {
     }
     if (!window.Razorpay) return;
     const rz = new window.Razorpay({
-      key: p.key, amount: p.amount * 100, currency: "INR", name: "VESTRA", description: `Order ${r.orderNumber}`, order_id: p.providerOrderId,
+      key: p.key, amount: p.amount * 100, currency: "INR", name: "VANAIVU", image: `${window.location.origin}/brand/vanaivu-logo.png`, description: `Order ${r.orderNumber}`, order_id: p.providerOrderId,
       prefill: { name: p.name, email: p.email, contact: p.phone }, theme: { color: "#100C0C" },
       handler: async (resp: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) => {
         const v = await verifyPaymentAction({ orderNumber: r.orderNumber, providerOrderId: resp.razorpay_order_id, providerPaymentId: resp.razorpay_payment_id, signature: resp.razorpay_signature });

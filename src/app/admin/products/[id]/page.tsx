@@ -140,7 +140,7 @@ export default async function EditProduct({ params, searchParams }: { params: Pr
           </Card>
 
           <Card title="3D garment assets">
-            <p className="text-[13px] text-stone mb-4">Products without an uploaded asset use VESTRA&apos;s procedural, measurement-fitted garment for the silhouette above. Upload rigged GLB/GLTF garments for the rigged avatar provider; set the skeleton tag the asset is rigged to.</p>
+            <p className="text-[13px] text-stone mb-4">Products without an uploaded asset use VANAIVU&apos;s procedural, measurement-fitted garment for the silhouette above. Upload rigged GLB/GLTF garments for the rigged avatar provider; set the skeleton tag the asset is rigged to.</p>
             <ul className="space-y-2 text-[13px]">
               {p.assets.map((a) => (
                 <li key={a.id} className="flex items-center gap-4">

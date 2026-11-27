@@ -1,4 +1,4 @@
-"""Builds VESTRA's realistic avatar web assets from CC0 MakeHuman sources.
+"""Builds VANAIVU's realistic avatar web assets from CC0 MakeHuman sources.
 
 python -I scripts/avatar/build_assets.py <mh_src_dir> <mh_assets_dir> <out_dir>
 

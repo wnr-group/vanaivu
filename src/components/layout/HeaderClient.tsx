@@ -7,6 +7,7 @@ import { Search, User, Heart, ShoppingBag, Menu, X, Shirt, ChevronRight } from "
 import { useUI } from "@/lib/ui-store";
 import { imgUrl } from "@/lib/format";
 import { SearchOverlay } from "./SearchOverlay";
+import { Logo } from "@/components/brand/Logo";
 
 export type NavData = {
   categories: { slug: string; name: string; image: string }[];
@@ -48,7 +49,7 @@ export function HeaderClient({ nav, bagCount, wishCount, user }: { nav: NavData;
           </button>
           <button onClick={() => setSearch(true)} className="lg:hidden p-2" aria-label="Search"><Search size={19} strokeWidth={1.4} /></button>
         </div>
-        <Link href="/" className="font-serif text-[26px] lg:text-[30px] tracking-[0.32em] pl-[0.32em] leading-none" aria-label="VESTRA home">VESTRA</Link>
+        <Link href="/" aria-label="VANAIVU home"><Logo className="text-[18px] sm:text-[23px] lg:text-[27px]" /></Link>
         <nav aria-label="Account" className="flex items-center justify-end gap-0.5 sm:gap-1.5">
           <Link href={user ? "/account" : "/account/login"} className="hidden sm:flex p-2 hover:opacity-60 transition-opacity" aria-label={user ? "My account" : "Sign in"}><User size={19} strokeWidth={1.4} /></Link>
           <Link href="/account/wishlist" className="hidden sm:flex p-2 relative hover:opacity-60 transition-opacity" aria-label={`Wishlist, ${wishCount} items`}>
@@ -157,7 +158,7 @@ function MobileNav({ open, onClose, nav, user }: { open: boolean; onClose: () =>
       <div className="absolute inset-0 bg-ink/40 animate-fade" onClick={onClose} />
       <div className="absolute inset-y-0 left-0 w-[88%] max-w-sm bg-paper flex flex-col animate-[fade-up_0.4s_var(--ease-lux)]">
         <div className="flex items-center justify-between h-16 px-5 border-b border-line">
-          <span className="font-serif tracking-[0.3em] text-xl">VESTRA</span>
+          <Logo className="text-lg" />
           <button onClick={onClose} aria-label="Close menu" className="p-2 -mr-2"><X size={20} strokeWidth={1.4} /></button>
         </div>
         <div className="flex-1 overflow-y-auto px-5 py-4">

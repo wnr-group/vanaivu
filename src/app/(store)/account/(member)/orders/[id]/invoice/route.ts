@@ -17,7 +17,7 @@ export async function GET(_: Request, { params }: { params: Promise<{ id: string
   const gst = Math.round(o.total - o.total / 1.12);
   const html = `<!doctype html><html><head><meta charset="utf-8"><title>Invoice ${esc(o.number)}</title>
 <style>body{font:14px/1.5 system-ui,sans-serif;color:#100c0c;max-width:760px;margin:40px auto;padding:0 20px}h1{font:400 32px Georgia,serif;letter-spacing:.3em}table{width:100%;border-collapse:collapse;margin-top:24px}td,th{padding:10px 0;border-bottom:1px solid #ddd;text-align:left}th{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#62615f}.r{text-align:right}.tot td{border:0;padding:4px 0}.muted{color:#62615f}@media print{button{display:none}}</style></head>
-<body><button onclick="print()" style="float:right;padding:8px 16px">Print / Save PDF</button><h1>VESTRA</h1>
+<body><button onclick="print()" style="float:right;padding:8px 16px">Print / Save PDF</button><img src="/brand/vanaivu-logo.png" alt="" width="96" height="96"><h1>VANAIVU</h1>
 <p class="muted">Tax invoice · ${esc(o.number)} · ${o.createdAt.toLocaleDateString("en-IN")}</p>
 <p><strong>Billed to</strong><br>${esc(a.fullName ?? "")}<br>${esc(a.line1 ?? "")}${a.line2 ? ", " + esc(a.line2) : ""}<br>${esc(a.city ?? "")}, ${esc(a.state ?? "")} ${esc(a.pincode ?? "")}<br>${esc(o.email)}</p>
 <table><thead><tr><th>Item</th><th>Variant</th><th class="r">Qty</th><th class="r">Amount</th></tr></thead><tbody>

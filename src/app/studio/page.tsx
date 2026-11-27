@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Studio } from "@/components/studio/Studio";
 
-export const metadata: Metadata = { title: "Virtual Studio", description: "Create your avatar and try on VESTRA pieces in 3D." };
+export const metadata: Metadata = { title: "Virtual Studio", description: "Create your avatar and try on VANAIVU pieces in 3D." };
 
 export default async function StudioPage({ searchParams }: { searchParams: Promise<{ product?: string; products?: string; color?: string; size?: string; outfit?: string }> }) {
   const sp = await searchParams;

@@ -11,7 +11,7 @@ export default async function CollectionsPage() {
   const cols = await db.collection.findMany({ orderBy: { sortOrder: "asc" }, include: { _count: { select: { products: true } } } });
   return (
     <>
-      <PageHead eyebrow="Collections" title="Collections" blurb="Edits from the VESTRA studio, each built around a mood, a moment or a way of dressing." />
+      <PageHead eyebrow="Collections" title="Collections" blurb="Edits from the VANAIVU studio, each built around a mood, a moment or a way of dressing." />
       <ul className="container-x grid sm:grid-cols-2 gap-x-5 gap-y-14">
         {cols.map((c, i) => (
           <li key={c.slug} className={i % 3 === 0 ? "sm:col-span-2" : ""}>

@@ -24,7 +24,7 @@ export default async function AccountHome() {
   ];
   return (
     <div>
-      <h1 className="font-serif text-4xl lg:text-5xl">Your VESTRA</h1>
+      <h1 className="font-serif text-4xl lg:text-5xl">Your VANAIVU</h1>
       <ul className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-line mt-10 border border-line">
         {tiles.map((t) => (
           <li key={t.href} className="bg-paper"><Link href={t.href} className="block p-6 hover:bg-mist/50 transition-colors"><p className="font-serif text-4xl">{t.value}</p><p className="eyebrow text-stone mt-2">{t.label}</p></Link></li>

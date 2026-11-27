@@ -8,6 +8,7 @@ import { db } from "@/lib/db";
 import { getPaymentProvider } from "@/lib/payments";
 import { CheckoutForm } from "@/components/checkout/CheckoutForm";
 import { Toaster } from "@/components/layout/Toaster";
+import { Logo } from "@/components/brand/Logo";
 
 export const metadata: Metadata = { title: "Checkout" };
 
@@ -23,7 +24,7 @@ export default async function CheckoutPage() {
       <header className="border-b border-line">
         <div className="container-x h-16 flex items-center justify-between">
           <Link href="/cart" className="eyebrow text-stone hover:text-ink">← Bag</Link>
-          <Link href="/" className="font-serif text-2xl tracking-[0.3em] pl-[0.3em]">VESTRA</Link>
+          <Link href="/" aria-label="VANAIVU home"><Logo className="text-lg sm:text-[22px]" /></Link>
           <span className="eyebrow text-stone flex items-center gap-1.5"><Lock size={12} /> Secure</span>
         </div>
       </header>

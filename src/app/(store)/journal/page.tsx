@@ -11,7 +11,7 @@ export default async function Journal() {
   const stories = await db.editorialStory.findMany({ where: { published: true }, orderBy: { createdAt: "desc" } });
   return (
     <>
-      <PageHead eyebrow="Journal" title="The Journal" blurb="Styling notes, wardrobe thinking and stories from the VESTRA studio." />
+      <PageHead eyebrow="Journal" title="The Journal" blurb="Styling notes, wardrobe thinking and stories from the VANAIVU studio." />
       <ul className="container-x grid sm:grid-cols-2 gap-x-6 gap-y-14">
         {stories.map((s) => (
           <li key={s.slug}><Link href={`/journal/${s.slug}`} className="group block">

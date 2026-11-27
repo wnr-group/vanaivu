@@ -29,7 +29,7 @@ export default async function WardrobePage() {
     <div className="space-y-20">
       <section>
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div><h1 className="font-serif text-4xl lg:text-5xl">My Wardrobe</h1><p className="text-stone text-[14px] mt-2">Your saved looks, pieces you&apos;ve tried on and everything you own from VESTRA.</p></div>
+          <div><h1 className="font-serif text-4xl lg:text-5xl">My Wardrobe</h1><p className="text-stone text-[14px] mt-2">Your saved looks, pieces you&apos;ve tried on and everything you own from VANAIVU.</p></div>
           <Link href="/studio" className="btn-dark">Style a new look</Link>
         </div>
         <h2 className="font-serif text-2xl mt-12 mb-6">My looks <span className="text-stone text-lg">({outfits.length})</span></h2>
@@ -63,7 +63,7 @@ export default async function WardrobePage() {
 
       <section>
         <h2 className="font-serif text-2xl mb-6">Purchased</h2>
-        {purchased.length ? <ProductGrid products={purchased.map((p) => toCard(p.variant.product))} /> : <p className="text-stone text-[14px]">Your VESTRA purchases will live here, ready to style with new pieces.</p>}
+        {purchased.length ? <ProductGrid products={purchased.map((p) => toCard(p.variant.product))} /> : <p className="text-stone text-[14px]">Your VANAIVU purchases will live here, ready to style with new pieces.</p>}
       </section>
 
       <section>

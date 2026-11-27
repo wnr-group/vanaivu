@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useActionState } from "react";
 import { loginAction, registerAction, requestResetAction, resetPasswordAction } from "@/app/actions/auth";
+import { FullLogo } from "@/components/brand/Logo";
 
 export function LoginForm({ next }: { next?: string }) {
   const [state, action, pending] = useActionState(loginAction, undefined);
@@ -65,6 +66,7 @@ export function AuthShell({ title, sub, children, image }: { title: string; sub:
       <div className="hidden lg:block relative bg-mist" style={{ backgroundImage: `url(${image}?w=1400&q=75&auto=format&fit=crop)`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div className="flex items-center justify-center px-5 py-16">
         <div className="w-full max-w-sm">
+          <FullLogo className="mb-8" />
           <h1 className="display text-[52px]">{title}</h1>
           <p className="text-stone mt-3 mb-10 text-[14px]">{sub}</p>
           {children}

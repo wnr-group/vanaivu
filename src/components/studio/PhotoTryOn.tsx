@@ -84,7 +84,7 @@ export function PhotoTryOn({ providerLabel, products, sessions, initialProduct }
             <p className="font-serif text-2xl">1. Upload a full-body photo</p>
             <p className="text-[13px] text-stone mt-2">Stand facing the camera, arms slightly away from your body, in fitted clothing and good light.</p>
             <label className="mt-6 flex items-start gap-3 text-[13px]"><input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="accent-ink mt-0.5" />
-              <span>I am the person in this photo (or have their permission) and consent to VESTRA sending it to {providerLabel ?? "our try-on provider"} to generate previews. Photos are never used for advertising.</span></label>
+              <span>I am the person in this photo (or have their permission) and consent to VANAIVU sending it to {providerLabel ?? "our try-on provider"} to generate previews. Photos are never used for advertising.</span></label>
             <label className="mt-4 flex items-center gap-3 text-[13px]">Automatically delete after
               <select value={retention} onChange={(e) => setRetention(e.target.value)} className="field-box w-28 h-9"><option value="7">7 days</option><option value="30">30 days</option></select>
             </label>

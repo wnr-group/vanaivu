@@ -33,7 +33,7 @@ export function StylistChat({ aiEnabled }: { aiEnabled: boolean }) {
 
   return (
     <div className="mt-12">
-      {!aiEnabled && <p className="text-[12px] text-stone bg-mist/70 px-4 py-3 mb-6">AI model not configured: answers come from VESTRA&apos;s rule-based recommender over the live catalogue. Add an Anthropic API key to enable the AI stylist.</p>}
+      {!aiEnabled && <p className="text-[12px] text-stone bg-mist/70 px-4 py-3 mb-6">AI model not configured: answers come from VANAIVU&apos;s rule-based recommender over the live catalogue. Add an Anthropic API key to enable the AI stylist.</p>}
       <div className="space-y-10" aria-live="polite">
         {msgs.map((m, i) => m.role === "user" ? (
           <p key={i} className="ml-auto max-w-md bg-ink text-paper px-5 py-3 text-[14px] w-fit">{m.text}</p>

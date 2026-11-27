@@ -5,8 +5,8 @@ import { parseJSON } from "./format";
 
 // ───────── Scopes (virtual categories used by navigation) ─────────
 export const SCOPES: Record<string, { title: string; blurb: string; where: Prisma.ProductWhereInput }> = {
-  "new-in": { title: "New In", blurb: "The latest arrivals from the VESTRA studio.", where: { isNew: true } },
-  clothing: { title: "Clothing", blurb: "The full VESTRA wardrobe, from everyday essentials to occasion wear.", where: { category: { slug: { not: "accessories" } } } },
+  "new-in": { title: "New In", blurb: "The latest arrivals from the VANAIVU studio.", where: { isNew: true } },
+  clothing: { title: "Clothing", blurb: "The full VANAIVU wardrobe, from everyday essentials to occasion wear.", where: { category: { slug: { not: "accessories" } } } },
   bottoms: { title: "Bottoms", blurb: "Jeans, trousers and skirts.", where: { category: { slug: { in: ["jeans-trousers", "skirts"] } } } },
   sale: { title: "Sale", blurb: "Selected pieces, now reduced.", where: { compareAtPrice: { not: null } } },
   trending: { title: "Trending Now", blurb: "What everyone is adding to their bag this week.", where: { isTrending: true } },
